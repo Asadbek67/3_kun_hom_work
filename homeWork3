@@ -1,0 +1,123 @@
+Асадбек.С.О, [11.10.2024 18:04]
+from telebot import TeleBot
+from telebot.types import Message
+
+bot = TeleBot("7684464966:AAGeofE01uR4iuOaTx8vIpWSv1YdWegbLew")
+
+@bot.message_handler(commands=['start'])
+def reaction_to_start(message: Message):
+    chat_id = message.chat.id
+    bot.send_message(chat_id, f"Salom, hurmatli {message.from_user.first_name}!")
+
+@bot.message_handler(content_types=['document'])
+def handle_document(message: Message):
+    document = message.document
+    group_chat_id = '-1002384313026'  
+    bot.send_document(group_chat_id, document.file_id)
+    bot.send_message(message.chat.id, "Fayl guruhga yuborildi рџЃрџЃрџЃрџ“")
+
+@bot.message_handler(content_types=['photo'])
+def handle_photo(message: Message):
+    photo = message.photo[-1]  
+    group_chat_id = '-1002384313026'
+    bot.send_photo(group_chat_id, photo.file_id)
+    bot.send_message(message.chat.id, "Rasm guruhga yuborildi рџ“ё")
+
+@bot.message_handler(content_types=['video'])
+def handle_video(message: Message):
+    video = message.video
+    group_chat_id = '-1002384313026'
+    bot.send_video(group_chat_id, video.file_id)
+    bot.send_message(message.chat.id, "Video guruhga yuborildi рџ“№")
+
+@bot.message_handler(content_types=['animation'])
+def handle_animation(message: Message):
+    animation = message.animation
+    group_chat_id = '-1002384313026'
+    bot.send_animation(group_chat_id, animation.file_id)
+    bot.send_message(message.chat.id, "Animatsiya guruhga yuborildi рџЋћпёЏ")
+
+
+
+
+bot.polling()
+----------------------------------------------------------bot ----------------------------------------------------the end-----------------------------------------------------------------------------------------
+Асадбек.С.О, [11.10.2024 18:05]
+# vazifa_1
+
+# from collections import namedtuple
+# Student = namedtuple('Student', ['name', 'last_name', 'age'])
+
+
+# stud = [
+#     Student('Asadbek', 'Sobirov', 17), 
+#     Student('Olim', 'Olimov', 34),
+#     Student('Zokir', 'Zokirov', 72)
+# ]
+# for student in stud:
+#     print(student)
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## vazifa2
+
+# from collections import namedtuple
+
+# Product = namedtuple('Product', ['product_name', 'price', 'quantity'])
+
+# products = [
+#     Product('Olma', 2000, 50),         
+#     Product('Banana', 1500, 30),
+#     Product('Anor', 3000, 20),
+#     Product('Uzum', 4000, 10),
+#     Product('Kivi', 5000, 5)
+# ]
+
+# for product in products:
+#     print(f"Mahsulot: {product.product_name}, Narxi: {product.price} so'm, Miqdori: {product.quantity} dona")
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------/
+# vaszifa3   
+# namedtuple yordamida "Shahar" uchun ma'lumotlar tuzing. 
+# Atributlar: city_name, country, population. Bir nechta shaharlarni yarating va eng katta aholi punktiga ega shaharni toping.
+
+# from collections import namedtuple
+
+# City=namedtuple('City', ['city_name','country','population'])
+
+# citiest=[
+#     City('tokyo','yaponiya',1000000),
+#     City('moscow','russia',150000),
+#     City('paris','fransiya',2000000),
+#     City('new york','amerika',80000),
+#     City('london','britaniya',9000)
+# ]
+# max_population = max(citiest, key=lambda x: x.population)
+
+
+# print(f'Eng katta aholi punktiga ega shahar: {max_population.city_name}, 'f'mamlakat: {max_population.country}, 'f'aholi: {max_population.population}')
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# vazifa5
+
+# 5. Kitob do’koni telegram botini hosil qiling. Bottda Genre (Janrlar), Book (Kitoblar) ni chiqarib beruvchi buttonlar bo’lsin.
+# Bosh sahifaga kirganda barcha genrelarni chiqarib bering.
+# Genre tanglanganda shu genrega tegishli kitoblarni chiqarib bering.
+# Kitoblar tanlanganda shu kitbobning, Rasmi, Nomi, Narxi, Sahifalari soni, Avtori kabi ma’lumotlarni chiqarib bering.
+# ----------------------------------------------------------------------------------------------------------------------------------
+# #vazifa_4
+# from collections import namedtuple
+
+# Avtomobil = namedtuple('Avtomobil', ['make', 'model', 'year'])
+
+# new_Cars = [
+#     Avtomobil(make='Toyota', model='Camry', year=2020),
+#     Avtomobil(make='Honda', model='Civic', year=2021),
+#     Avtomobil(make='Ford', model='Mustang', year=2019),
+#     Avtomobil(make='Tesla', model='Model 3', year=2022),
+#     Avtomobil(make='Chevrolet', model='Impala', year=2018)
+# ]
+
+# eng_yangi_avtomobil = max(avtomobillar, key=lambda x: x.year)
+
+# print(f"Eng yangi avtomobil: {eng_yangi_avtomobil.make} {eng_yangi_avtomobil.model} ({eng_yangi_avtomobil.year})")
+  
